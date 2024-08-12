@@ -1302,6 +1302,9 @@ a {
 .work-steps .container {
   justify-content: space-between;
 }
+.work-steps .container .work-st-img-main {
+  max-width: 100%;
+}
 @media (min-width: 375px) and (max-width: 767px) {
   .work-steps .container .work-st-img-main {
     margin: 0 0 3.125rem;

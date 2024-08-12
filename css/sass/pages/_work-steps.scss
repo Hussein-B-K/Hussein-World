@@ -14,6 +14,7 @@
         justify-content: space-between;
 
         .work-st-img-main {
+            max-width: 100%;
         // media 
             @include min-md {
                 margin: 0 0 3.125rem;
