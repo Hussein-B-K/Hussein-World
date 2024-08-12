@@ -1,0 +1,131 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*start of  Services*/ 
+
+.services {
+    position: relative;
+    padding: $section-tb-padding;
+    background-color: $section-background;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 30px;
+        z-index: 1;
+        background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+        background-size: 30px 30px;
+    }
+
+    .box {
+        position: relative;
+        background-color: white;
+        box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+        transition: $main-transition;
+        counter-increment: services;
+        -webkit-transition: $main-transition;
+        -moz-transition: $main-transition;
+        -ms-transition: $main-transition;
+        -o-transition: $main-transition;
+
+        &:hover {
+            transform: translateY(-10px);
+            -webkit-transform: translateY(-10px);
+            -moz-transform: translateY(-10px);
+            -ms-transform: translateY(-10px);
+            -o-transform: translateY(-10px);
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+
+        &::Before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: $main-color;
+            transform: translate(-50%);
+            transition: $main-transition;
+            -webkit-transform: translate(-50%);
+            -moz-transform: translate(-50%);
+            -ms-transform: translate(-50%);
+            -o-transform: translate(-50%);
+            -webkit-transition: $main-transition;
+            -moz-transition: $main-transition;
+            -ms-transition: $main-transition;
+            -o-transition: $main-transition;
+            }
+
+
+
+        }
+
+        i {
+            display: block;
+            color: #d5d5d5;
+            text-align: center;
+            margin: 1.875rem auto 1.25rem
+        }
+
+        h3 {
+            text-align: center;
+            color: $main-color;
+            font-size: 1.5625rem;
+            margin: 1.25rem 0 2.5rem;
+        }
+
+        .info {
+            position: relative;
+            overflow: hidden;
+            text-align: right;
+            padding: 0.9375rem;
+            background-color: #f9f9f9;
+            a {
+                color: $main-color;
+            }
+
+            &::before {
+                counter-increment: services + 1;
+                content: "0" counter(services);
+                position: absolute;
+                top: 0;
+                left:0;
+                width: 100px;
+                height: 100%;
+                @extend%center;
+                background-color: $main-color;
+                color: white;
+                font-weight: bold;
+                font-size: 1.875rem;
+                padding-right: 0.9375rem;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left:5em;
+                width: 50px;
+                height: calc(100% + 0.5px);
+                background-color: #d5d5d5;
+                transform: skewX(-30deg);
+                -webkit-transform: skewX(-30deg);
+                -moz-transform: skewX(-30deg);
+                -ms-transform: skewX(-30deg);
+                -o-transform: skewX(-30deg);
+
+            }
+
+        }
+}
+
+/*End of  Services*/ 

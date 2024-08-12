@@ -1,0 +1,333 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../helpers/mixins" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+
+
+/* Start of Header*/ 
+
+.header {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 10px #ddd;
+    .container {
+        position: relative;
+        @extend %center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .logo {
+            @extend %center;
+            font: {
+                size: 1.625rem;
+                weight: bold;
+            }
+            color: $main-color;
+
+            @include min-md {
+                 width: 100%;
+                 height: 3.125rem;
+            }
+
+
+        }
+
+        .nav {
+            @extend %center;
+
+                    li .head-link {
+                    display: flex;
+                    position: relative;
+                    overflow: hidden;
+                    color: black;
+                    text-align: center;
+                    font-size: 1.11rem;
+                    padding: 1.612rem 1.875rem;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+
+                    &::before {
+                        content: "";
+                        @extend %pseudo-position;
+                        height: 4px;
+                        left: -100%;
+                        background-color: $main-color;
+                        transition: $main-transition;
+                        -webkit-transition: $main-transition;
+                        -moz-transition: $main-transition;
+                        -ms-transition: $main-transition;
+                        -o-transition: $main-transition;
+                    }
+
+                    &:hover::before {
+                        left: 0;
+                    }
+                    
+                    &:hover {
+                        color: $main-color;
+                        background-color: $hv-fade;
+
+                    }
+
+                    @include min-md {
+                        padding: 0.625rem;
+                        font-size: 0.875rem;
+                        height: 2.5rem;
+                    }
+
+                }
+
+                & li:last-child:hover .big-menu { 
+                        opacity: 1;
+                        z-index: 100;
+                        top: calc(100% + 1px);
+                        
+                }
+
+    // Media
+                    @include min-md {
+                    margin: auto;
+                }
+        }
+        
+    }
+
+}
+
+// Mega menu
+.header .container .nav .big-menu {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    background-color: white;
+    padding: 1.875rem;
+    display: flex;
+    gap: 2.5rem;
+    top: calc(100% + 50px);
+    transition: $main-transition;
+    -webkit-transition: $main-transition;
+    -moz-transition: $main-transition;
+    -ms-transition: $main-transition;
+    -o-transition: $main-transition;
+    border-bottom: 3px solid $main-color;
+
+    .img-con img{
+        max-width: 100%;
+
+        @include min-md {
+            display: none;
+        }
+        @include md {
+            display: none;
+        }
+    }
+
+    .links {
+        min-width: 250px;
+        flex: 1;
+
+        li:not(:last-child) {
+            border-bottom: 1px solid #e9e6e6;
+        } 
+
+        li a {
+         position: relative;
+        color: $main-color;
+        padding: 1rem;
+        font-weight: bold;
+        display: block;
+        font-size: 1.125rem;
+        transition: $main-transition;
+        -webkit-transition: $main-transition;
+        -moz-transition: $main-transition;
+        -ms-transition: $main-transition;
+        -o-transition: $main-transition;
+
+        i {
+            margin-right: 10px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fafafa;
+            z-index: -1;
+            transition: $main-transition;
+            -webkit-transition: $main-transition;
+            -moz-transition: $main-transition;
+            -ms-transition: $main-transition;
+            -o-transition: $main-transition;
+        }
+        &:hover::before {
+            width: 100%;
+        }
+
+      }
+
+      
+    }
+
+    @include min-md {
+        flex-direction: column;
+        gap: 0;
+        padding: 5px;
+    }
+
+}
+
+/* End of Header*/
+
+/* Start of landing */
+
+.landing {
+    position: relative;
+    .container { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: calc(100vh - 72px);
+        padding-bottom: 7.5rem;
+
+        .text-con {
+            h1 {
+                margin: 0;
+                font-size: 2.5rem;
+                letter-spacing: -2px;
+                @include min-md {
+                    font-size: 1.75rem;
+                }
+            }
+            p {
+                color: #666; /* custom  color*/
+                font-size: 1.4375rem;
+                line-height: 1.7;
+                max-width: 500px;
+                margin: 0.3125rem 0 0;
+                // Media
+                @include min-md {
+                    font-size: 1.125rem;
+                }
+    
+                @include md {
+                    margin: 10px auto;
+                }
+            }
+                // Media
+                @include min-md {
+                    text-align: center;
+                }
+    
+                @include md {
+                    text-align: center;
+                }
+            
+        }
+
+        .img-con {
+                img {
+                width: 600px;
+                animation: up-down 5000ms linear infinite;
+                -webkit-animation: up-down 5000ms linear infinite;
+            }
+    // Media
+            @include min-md {
+                display: none;
+            }
+
+            @include md {
+                display: none;
+            }
+        }
+
+            // Media
+            @include min-md {
+                justify-content: center;
+            }
+
+            @include md {
+                justify-content: center;
+            }
+    }
+
+    &::before {
+        content: "";
+        @extend%pseudo-position;
+        background-color: $section-background;
+        z-index: -2;
+        top: -40px;
+        transform: skewY(-6deg) ;
+        -webkit-transform: skewY(-6deg) ;
+        -moz-transform: skewY(-6deg) ;
+        -ms-transform: skewY(-6deg) ;
+        -o-transform: skewY(-6deg) ;
+        transform-origin: top left;
+    }
+
+    @keyframes up-down {
+        0% {
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-3.125rem);
+            -webkit-transform: translateY(-3.125rem);
+            -moz-transform: translateY(-3.125rem);
+            -ms-transform: translateY(-3.125rem);
+            -o-transform: translateY(-3.125rem);
+        }
+
+    
+    }
+
+    .angle-down {
+        color: $main-color;
+        position: absolute;
+        bottom: 1.875rem;
+        left: 50%;
+        transition: $main-transition;
+        animation: arrow-down  1500ms linear infinite ;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -webkit-transition: $main-transition;
+        -moz-transition: $main-transition;
+        -ms-transition: $main-transition;
+        -o-transition: $main-transition;
+        -webkit-animation: arrow-down  1500ms linear infinite ;
+        }
+
+    @keyframes arrow-down {
+        0%,10%,20%,50%,80%,100% {
+            transform: translatey(0);
+            -webkit-transform: translatey(0);
+            -moz-transform: translatey(0);
+            -ms-transform: translatey(0);
+            -o-transform: translatey(0);
+        }
+        40%,60% {
+            transform: translateY(-0.9375rem);
+            -webkit-transform: translateY(-0.9375rem);
+            -moz-transform: translateY(-0.9375rem);
+            -ms-transform: translateY(-0.9375rem);
+            -o-transform: translateY(-0.9375rem);
+            }
+    }
+}
+
+
+/* End of landing */ 

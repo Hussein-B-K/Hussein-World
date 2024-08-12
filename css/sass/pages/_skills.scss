@@ -1,0 +1,75 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*Start of Skills*/ 
+
+.our-skills {
+    padding: $section-tb-padding;
+
+    .container {
+        display: flex;
+        align-items: center;
+        .img-con img {
+            max-width: 100%;
+
+            @include min-md {
+                display: none;
+            }
+
+            @include md {
+                display: none;
+            }
+        }
+
+        .skills {
+            flex: 1;
+
+            .skill {
+                h3 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    span {
+                        font-size: 12px;
+                        color: $main-color;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        padding: 3px 5px;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        -ms-border-radius: 4px;
+                        -o-border-radius: 4px;
+                    }   
+                }
+
+                .progress {
+                    position: relative;
+                    height: 1.875rem;
+                    background-color: #eee;
+
+                    span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        background-color: $main-color;
+                        transition: width 500ms linear;
+                        -webkit-transition: width 500ms linear;
+                        -moz-transition: width 500ms linear;
+                        -ms-transition: width 500ms linear;
+                        -o-transition: width 500ms linear;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+/*end of Skills*/ 

@@ -1,0 +1,122 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*Start of Discount*/
+
+.discount {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+
+    .image {
+        background-image: url("/Hussein-World/imgs/discount-background1.jpg");
+        background-size: cover;
+        color: white;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 50%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(23 135 224 / 97%);
+            z-index: -1;
+        }
+        animation: change-bg 7500ms linear infinite;
+        -webkit-animation: change-bg 7500ms linear infinite;
+
+
+            // Media
+            @include min-md {
+                flex-basis: 100%;
+            }
+            @include md {
+                flex-basis: 100%;
+            }
+    }
+
+    .content {
+        text-align: center;
+        padding: 0 1.25rem;
+        
+        h2 {
+            
+            font-size: 2.5rem;
+            letter-spacing: -2px;
+        }
+        
+        p {
+            line-height: 1.6;
+            font-size: 1.125rem;
+            max-width: 500px;
+        }
+        
+        img {
+            max-width: 100%;
+            width: 300px;
+        }
+        
+    }
+
+    .form-con {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 50%;
+        padding-bottom: 3.125rem;
+
+        .content {
+            text-align: center;
+            padding: 0 1.25erm;
+        }
+
+        form {
+
+            input, textarea {
+                display: block;
+                width: 100%;
+                padding: 0.9375rem;
+                margin-bottom: 1.5625rem;
+                background-color: #f9f9f9;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #ccc;
+                caret-color: $main-color;
+            }
+
+            textarea {
+                width: 100%;
+                height: 200px;
+                resize: none;
+            }
+
+            input[type="submit"] {
+                background-color: $main-color;
+                color: white;
+                font-weight: bold;
+                font-size: 1.25rem;
+                cursor: pointer;
+            }
+        }
+
+            // Media
+            @include min-md {
+                flex-basis: 100%;
+            }
+            @include md {
+                flex-basis: 100%;
+            }
+    }
+}
+
+/*Start of Discount*/

@@ -1,0 +1,102 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*start of Stats*/
+
+.stats {
+    position: relative;
+    padding: $section-tb-padding;
+    background-image: url("/Hussein-World/imgs/stats.jpg");
+    background-size: cover;
+    min-height: 300px;
+
+    &::before { //overlay
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255 255 255 / 95%);
+    }
+
+    h2 {
+        width: fit-content;
+        font-size: 2.5rem;
+        margin: 0 auto 3.125rem;
+        position: relative;
+    }
+
+    .container.grid-con {
+        
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.25rem;
+
+        .box {
+            position: relative;
+            background-color: white;
+            padding: 1.875rem 0.9375rem;
+            text-align: center;
+            opacity: 0.8;
+            transition: $main-transition;
+            -webkit-transition: $main-transition;
+            -moz-transition: $main-transition;
+            -ms-transition: $main-transition;
+            -o-transition: $main-transition;
+            z-index: 12;
+    
+            &:hover {
+                opacity: 1;
+            }
+    
+            .number {
+                display: block;
+                font-weight: bold;
+                font-size: 3.125rem;
+                margin: 10px 0;
+            }
+    
+            .text {
+                color: $main-color;
+                font-style: italic;
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+
+            &::before,&::after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 0;
+                background-color: $main-color;
+                transition: 1000ms;
+                -webkit-transition: 1000ms;
+                -moz-transition: 1000ms;
+                -ms-transition: 1000ms;
+                -o-transition: 1000ms;
+            }
+
+            &::before {
+                top: 0;
+                right: 0;
+            }
+
+            &::after {
+                left: 0;
+                bottom: 0;
+            }
+
+            &:hover.box::before, &:hover.box::after{
+                height: 100%;
+            
+            }
+        }
+
+    }
+
+}
+
+/*End  of Stats*/

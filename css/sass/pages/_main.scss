@@ -1,0 +1,224 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+// Start of Scroll to top btn
+
+.btn-scroll-top {
+  position: fixed;
+  right: -3em;
+  bottom: 25px;
+  z-index: 9999;
+  width: 35px;
+  height: 35px;
+  background-color: $main-color;
+  color: white;
+  cursor: pointer;
+  padding: 1.3rem;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: $main-transition;
+  -webkit-transition: $main-transition;
+  -moz-transition: $main-transition;
+  -ms-transition: $main-transition;
+  -o-transition: $main-transition;
+}
+
+.btn-scroll-top.show {
+    right: 18px;
+}
+
+.fa-arrow-up::before {
+content: "\f062";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+}
+
+// End of Scroll to top btn
+
+
+// Start of title-Main
+
+.title-main {
+    width: fit-content;
+    margin:  0 auto $section-b-margin;
+    padding: 0.625rem 1.25rem;
+    font-size: $title-font-size;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid black;
+    position: relative;
+    z-index: 1;
+    transition: $main-transition;
+    -webkit-transition: $main-transition;
+    -moz-transition: $main-transition;
+    -ms-transition: $main-transition;
+    -o-transition: $main-transition;
+
+    &:hover{
+    color: white;
+    border: 2px solid white;
+    transition-delay: 600ms;
+    }
+
+    &:hover::before {
+        z-index: -1;
+        animation: slide-left 600ms linear forwards;
+        -webkit-animation: slide-left 600ms linear forwards;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -1em;
+        width: 12px;
+        height: 12px;
+        background-color: $main-color;
+        border-radius: 50%;
+        transform: translatey(-50%);
+        -webkit-transform: translatey(-50%);
+        -moz-transform: translatey(-50%);
+        -ms-transform: translatey(-50%);
+        -o-transform: translatey(-50%);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+
+
+        
+    }
+
+    &:hover::after {
+        z-index: -1;
+        animation: slide-right 600ms linear forwards;
+        -webkit-animation: slide-right 600ms linear forwards;
+    }
+
+        &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -1em;
+        width: 12px;
+        height: 12px;
+        background-color: $main-color;
+        border-radius: 50%;
+        transform: translatey(-50%);
+        -webkit-transform: translatey(-50%);
+        -moz-transform: translatey(-50%);
+        -ms-transform: translatey(-50%);
+        -o-transform: translatey(-50%);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+
+
+            
+     }
+ }
+
+// End of title-Main
+
+
+// Start of keyFrames
+
+@keyframes  slide-left {
+50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+}
+
+100% {  
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+}
+
+@keyframes  slide-right {
+50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+}
+
+100% {  
+    right: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+}
+
+//  ----------
+
+@keyframes ar-card-arrow {
+    0% {
+        transform: translatex(0);
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -ms-transform: translatex(0);
+        -o-transform: translatex(0);
+}
+
+    100% {
+        transform: translatex(10px);
+        -webkit-transform: translatex(10px);
+        -moz-transform: translatex(10px);
+        -ms-transform: translatex(10px);
+        -o-transform: translatex(10px);
+}
+}
+
+
+//  ----------
+
+@keyframes change-bg {
+    0%,100% {
+        background-image: url("/Hussein-World/imgs/discount-background1.jpg");
+    }
+
+    50% {
+        background-image: url("/Hussein-World/imgs/discount-background2.jpg");
+    }
+}
+
+// ----------
+
+@keyframes card-flash {
+    0%, 40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width:200%;
+        height: 200%;
+    }
+}
+
+// ----------
+// End of keyFrames

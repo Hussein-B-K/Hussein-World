@@ -1,0 +1,80 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*Start of Articles*/ 
+
+
+.articles  {
+    padding: $section-tb-padding;
+    .container {
+
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    // Cards
+
+    .card {
+        box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+        background-color: white;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+        transition: $main-transition;
+        -webkit-transition: $main-transition;
+        -moz-transition: $main-transition;
+        -ms-transition: $main-transition;
+        -o-transition: $main-transition;
+
+        .card-con{
+            .card-img img {
+            max-width: 100%;
+            }
+
+            .card-text {
+                padding: 1.25rem;
+                h3 {
+                    margin: 0;
+                }
+
+                p {
+                    margin: 0.625rem 0 0;
+                    line-height: 1.5;
+                    color: #777;
+                }
+            }
+
+        }
+
+        .more-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem;
+            border-top: 1px solid #e6e6e7;
+            font-weight: bold;
+            
+            a,i {
+            color: $main-color;
+
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+             box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+        }
+
+        &:hover .more-info i {
+            animation: ar-card-arrow 0.6s linear infinite;
+            -webkit-animation: ar-card-arrow 0.6s linear infinite;
+        }
+    }
+}
+}
+
+
+/*End of Articles*/ 
+

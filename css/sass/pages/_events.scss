@@ -1,0 +1,200 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/* Start of Events*/
+
+.events {
+    position: relative;
+    padding: $section-tb-padding;
+    overflow: hidden;
+    height: 60.1875rem;
+
+    .dots-up,.dots-down {
+        position: absolute;
+        width: 240px;
+        height: 186px;
+        z-index: -1;
+
+        @include min-md {
+            display: none;
+        }
+        @include min-md {
+            display: none;
+        }
+    }
+
+    .dots-up {
+        right: -36px;
+        top: 200px;
+    }
+
+    .dots-down {
+        left: 0;
+        bottom: 200px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        img {
+            width: 450px;
+    // Media
+            @include min-md {
+                display: none;
+            }
+            @include md {
+                display: none;
+            }
+        }
+
+        .info {
+            flex: 1;
+
+            .time {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.625rem;
+                margin: 1.25rem 0;
+
+                .unit {
+                    border: 1px solid #d4d4d4;
+                    border-radius: 6px;
+                    width: 75px;
+                    -webkit-border-radius: 6px;
+                    -moz-border-radius: 6px;
+                    -ms-border-radius: 6px;
+                    -o-border-radius: 6px;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+
+                    &:hover {
+                        border-color: $main-color;
+                    }
+
+                    .days,.hours,.minutes,.seconds {
+                        display: block;
+                        text-align: center;
+                        padding: 0.9375rem 0;
+                        font-size: 2.1875rem;
+                        font-weight: bold;
+                        color: $main-color;
+                    }
+
+                    span {
+                        padding: 8px 10px;
+                        font-size: 0.8125rem; 
+                        border-top: 1px solid #d4d4d4;
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            }
+
+           .follow-up-text {
+            padding-top: 1rem;
+
+            h2,p {
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 1.875rem;
+                margin-top: 2.5rem;
+                margin-bottom: 0;
+            }
+
+            p {
+                color: #777;
+                text-align: center;
+                line-height: 1.7; 
+                font-size: 1.1875rem;
+            }
+           }
+        }
+
+        .subscribe {
+            width: 100%;
+            margin-top: 7.125rem;
+            position: relative;
+
+            form {
+                width: 600px;
+                margin: 1.25rem 0;
+                padding: 1.875rem 2.5rem;
+                background-color: #f6f5f5;
+                border-radius: 50px;
+                display: flex;
+                gap: 1.25rem;
+                -webkit-border-radius: 50px;
+                -moz-border-radius: 50px;
+                -ms-border-radius: 50px;
+                -o-border-radius: 50px;
+
+                [type="email"] {
+                    flex: 1;
+                    padding: 1.25rem;
+                    border: 0;
+                    outline: 0;
+                    border-radius: 50px;
+                    caret-color: $main-color;
+                    -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                    -ms-border-radius: 50px;
+                    -o-border-radius: 50px;
+                }
+
+                [type="submit"] {
+                    background-color: $main-color;
+                    color: white;
+                    font-weight: bold;
+                    padding: 1.25rem;
+                    border: none;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    transition: $main-transition;
+                    -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                    -ms-border-radius: 50px;
+                    -o-border-radius: 50px;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+
+                    &:hover {
+                        background-color: #1787e0;
+                    }
+                }
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+
+    // Media
+                @include min-md {
+                    max-width: 100%;
+                    padding: 20px;
+                    flex-direction: column;
+                    border-radius: 0;
+                }
+            }
+        }
+
+    }
+
+}
+
+/* end of Events*/

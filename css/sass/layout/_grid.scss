@@ -1,0 +1,71 @@
+@use "../helpers/mixins" as *;
+//Start of Global
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+%pseudo-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.container {
+    width: 73.125rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+
+    // Media
+
+    @include md {
+        width: 46.875rem;
+    }
+
+    @include lg {
+        width: 60.625rem;
+    }
+
+    @include xl {
+        width: 73.125rem;
+    }
+}
+
+.grid-con {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+// End of Global
+
+
+// Start of Grid
+
+
+
+
+
+// End of Grid

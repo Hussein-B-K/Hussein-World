@@ -1,0 +1,188 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*Start of Pricing*/ 
+
+.pricing {
+    position: relative;
+    padding: $section-tb-padding;
+    background-color: $section-background;
+    overflow: hidden;
+
+    .dots-up,.dots-down {
+        position: absolute;
+        width: 240px;
+        height: 186px;
+        z-index: 1;
+    }
+
+    .dots-up {
+        right: -36px;
+        top: 200px;
+    }
+
+    .dots-down {
+        left: 0;
+        bottom: 200px;
+    }
+
+
+    .container.grid-con {
+        gap: 1.875rem;
+    }
+
+    .container {
+        
+        .box {
+            position: relative;
+            z-index: 1;
+            background-color: white;
+            box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+            text-align: center;
+            transition: $main-transition;
+            -webkit-transition: $main-transition;
+            -moz-transition: $main-transition;
+            -ms-transition: $main-transition;
+            -o-transition: $main-transition;
+
+            h3 {
+                font-size: 1.5625rem;
+                font-weight: bold;
+                margin: 1.875rem 0;
+                letter-spacing: -1;
+            }
+
+                .img-con img {
+                    width: 80px;
+                    margin-bottom: 1.875rem;
+                }
+
+                .price {
+                    margin-bottom: 0.9375rem;
+
+                    .amount {
+                        color: $main-color;
+                        display: block;
+                        font-size: 3.75rem;
+                        margin-bottom: 5px;
+                    }
+
+                    .per-m {
+                        color: #777;
+                    }
+                }
+
+                ul {
+                    text-align: left;
+
+                    li {
+                        border-top: 1px solid #eee;
+                        padding: 1.25rem;
+
+                        i {
+                            color: $main-color;
+                            margin-right: 10px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+
+                a {
+                    display: block;
+                    width: fit-content;
+                    font-weight: bold;
+                    margin: 1.875rem auto 2.5rem;
+                    padding: 0.9375rem  1.25rem;
+                    border: 2px solid $main-color;
+                    border-radius: 6px;
+                    color: $main-color;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+                    -webkit-border-radius: 6px;
+                    -moz-border-radius: 6px;
+                    -ms-border-radius: 6px;
+                    -o-border-radius: 6px;
+                    &:hover {
+                        color: white;
+                        background-color: $main-color;
+                    }
+
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 50%;
+                    background-color: #f6f6f6;
+                    z-index: -1;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 50%;
+                    background-color: #f6f6f6;
+                    z-index: -1;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                &.popular .label {
+                    position: absolute;
+                    top: 0;
+                    right: 20px;
+                    width: 40px;
+                    background-color: $main-color;
+                    color: white;
+                    padding: 10px 10px 2.1875rem 10px;
+                    font-weight: bold;
+                    writing-mode: vertical-lr;
+                    -webkit-writing-mode: vertical-lr;
+                    -ms-writing-mode: vertical-lr;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0; 
+                        right: 0; 
+                        border-style: solid;
+                        border-width: 20px;
+                        border-color: transparent transparent white transparent;
+                    }
+                }
+            }
+            
+    }
+
+
+}
+
+/*end of Pricing*/ 

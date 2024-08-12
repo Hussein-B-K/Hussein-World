@@ -1,0 +1,138 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+
+/*Start of t-members*/  
+
+.t-memebers {
+    padding: $section-tb-padding;
+    .grid-con {
+        gap: 1.875rem;
+
+        .card {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: calc(100% - 60px);
+                height: 100%;
+                background-color: #f3f3f3;
+                z-index: -2;
+                transition: $main-transition;
+                border-radius: 10px;
+                -webkit-transition: $main-transition;
+                -moz-transition: $main-transition;
+                -ms-transition: $main-transition;
+                -o-transition: $main-transition;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+
+            .img-con {
+                display: flex;
+                align-items: center;
+                padding-top: 3.75rem;
+                img {
+                    width: calc(100% - 3.75rem);
+                    border-radius: 10px;
+                    transition: $main-transition;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+
+                }
+
+                .social {
+                    @extend %center;
+                    flex-direction: column;
+                    width: 3.75rem;
+                    gap: 1.25rem;
+
+                    a {
+                        @extend %center;
+                        width: 3.75rem;
+                        height: 1.875rem;
+
+                    }
+
+                    i {
+                        color: #777;
+                        transition: $main-transition;
+                        -webkit-transition: $main-transition;
+                        -moz-transition: $main-transition;
+                        -ms-transition: $main-transition;
+                        -o-transition: $main-transition;
+                        &:hover {
+
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+
+            .info {
+                padding-left: 5em;
+
+                h3 {
+                    font-size: 1.375rem;
+                    color: $main-color;
+                    margin-bottom: 0;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+                }
+
+                p {
+                    margin: 0.625rem 0 1.5625rem 0;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                background-color: #e4e4e4;
+                z-index: -1;
+                border-radius: 10px;
+                transition: $main-transition;
+                -webkit-transition: $main-transition;
+                -moz-transition: $main-transition;
+                -ms-transition: $main-transition;
+                -o-transition: $main-transition;
+            }
+
+            &:hover::after {
+                width: calc(100% - 3.75rem);
+            }
+
+            &:hover img {
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+            }
+
+            &:hover .info h3 {
+                color: #777;
+            }
+        }
+    }
+}
+
+/*End of t-members*/  

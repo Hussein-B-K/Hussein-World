@@ -1,0 +1,17 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/* Start of videos*/
+.videos {
+     padding: $section-tb-padding;
+    .container {
+        text-align: center;
+        video {
+            max-width: 100%;
+        }
+    }
+}
+/* End of videos*/  

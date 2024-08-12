@@ -1,0 +1,38 @@
+// // HELPERS - variables, mixins, etc
+
+@use "sass/helpers/variables" as *;
+@use "sass/helpers/mixins" as *;
+
+// // LAYOUT - header, grid, footer, etc
+
+@use "sass/layout/header";
+@use "sass/layout/grid";
+@use "sass/layout/flex";
+@use "sass/pages/main";
+@use "sass/layout/footer";
+
+// // COMPONENTS - buttons,intro, etc
+
+// // PAGES - main, serveices, skills, etc
+@use "sass/pages/articles";
+@use "sass/pages/gallery";
+@use "sass/pages/features";
+@use "sass/pages/testimonials";
+@use "sass/pages/t-memebers";
+@use "sass/pages/services";
+@use "sass/pages/skills";
+@use "sass/pages/work-steps";
+@use "sass/pages/events";
+@use "sass/pages/pricing";
+@use "sass/pages/videos";
+@use "sass/pages/stats";
+@use "sass/pages/discount";
+
+
+// Global Customization Can Be Found in 'sass/layout/grid'
+
+// intro can Be Found In: "sass//pages/_main.scss" 
+
+// @KeyFrames Can be found In: "sass//pages/_main.scss" 
+
+//  general Things can Be Found in : "sass//pages/_main.scss" 

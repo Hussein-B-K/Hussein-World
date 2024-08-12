@@ -1,0 +1,94 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*start of Testimonials*/ 
+
+.testimonials {
+    background-color: $section-background;
+    padding: $section-tb-padding;
+
+    .box {
+        position: relative;
+        padding: 1.25rem;
+        background-color: white;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+
+        img {
+            position: absolute;
+            top: -3.13em;
+            right: -.63em;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 10px solid $section-background;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            }
+
+            h3 {
+                width: 0 0 0.625rem;
+            }
+
+            p {
+                color: #777;
+                line-height: 1.5;
+                margin: 0.625rem 0 0 0;
+            }
+    }
+
+    .container .box:nth-child(1) {
+
+        i:not(:last-child) {
+            color: #ffc107;
+        }
+    }
+
+    .container .box:nth-child(2) {
+
+        i:not(:last-child) {
+            color: #ffc107;
+        }
+    }
+
+    .container .box:nth-child(3) {
+
+        i:not(:last-child) {
+            color: #ffc107;
+        }
+    }
+
+    .container .box:nth-child(4) {
+
+        i {
+            color: #ffc107;
+        }
+    }
+
+    .container .box:nth-child(5) {
+
+        i:not(:nth-last-child(-n + 2)) {
+            color: #ffc107;
+        }
+    }
+
+    .container .box:nth-child(6) {
+
+        i:not(:nth-last-child(-n + 2)) {
+            color: #ffc107;
+        }
+    }
+
+
+}
+
+/*End of Testimonials*/ 

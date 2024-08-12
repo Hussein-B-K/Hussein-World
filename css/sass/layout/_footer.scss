@@ -1,0 +1,204 @@
+//  Import Essentials
+@use "../helpers/variables.scss" as *;
+@use "../layout/grid" as *;
+@use "../layout/flex" as *;
+@use "../helpers/mixins" as *;
+
+/*Start of Footer*/
+
+.footer {
+    padding: 4.375rem 0 0;
+    background-color: #191919;
+
+    .container.grid-con {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+        @include min-md {
+            grid-auto-flow: row;
+        }
+    }
+    .container {
+        // Box 1
+        .box {
+
+            h3 {
+                color: white;
+                font-size: 3.125rem;
+                margin: 0 0 1.25rem;
+            }
+
+            .social {
+                display: flex;
+                li {
+                    margin-right: 10px;
+                }
+
+                a {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.25rem;
+                    color: #b9b9b9;
+                    background-color: #313131;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+
+
+                    &:hover.facebook {
+                    background-color: #1877f2;
+                    }
+                    &:hover.twitter {
+                    background-color: #1da1f2;
+                    }
+                    &:hover.youtube {
+                    background-color: #ff0000;
+                    }
+                }
+
+                       // Media
+                       @include min-md {
+                        justify-content: center;
+                    }
+                    @include md {
+                        justify-content: center;
+                    }
+            }
+
+            .fowllow-up-text {
+                line-height: 2;
+                color: #b9b9b9;
+            }
+
+        // Media
+                @include min-md {
+                    text-align: center;
+                }
+                @include md {
+                    text-align: center;
+                }
+        }
+
+        // Box 2 
+
+         .box {
+            .links {
+
+                li:not(:last-child) {
+                    border-bottom: 1px solid #444;
+                }
+
+                li {
+                    padding: 0.9375rem 0;
+                    transition: $main-transition;
+                    -webkit-transition: $main-transition;
+                    -moz-transition: $main-transition;
+                    -ms-transition: $main-transition;
+                    -o-transition: $main-transition;
+                }
+
+                li a {
+                color: #b9b9b9;
+                transition: $main-transition;
+                -webkit-transition: $main-transition;
+                -moz-transition: $main-transition;
+                -ms-transition: $main-transition;
+                -o-transition: $main-transition;
+            }
+
+                i{
+                    margin-right: 10px;
+                    color: $main-color;
+                    font-weight: 900;
+                }
+
+                & li:hover a {
+                    color: white;
+                    padding-left: 10px;
+                }
+            }
+         }
+
+        //  Box 3
+
+        .box {
+            .contact {
+                display: flex;
+                align-items: center;
+                color: #b9b9b9;
+                margin-bottom: 1.875rem;
+
+                i {
+                    font-size: 1.5625rem;
+                    color: $main-color;
+                    margin-right: 10px;
+
+            // Media
+                @include min-md {
+                    margin-right: 0;
+                    margin-bottom: 0.9375rem;
+                }
+                @include md {
+                    margin-right: 0;
+                    margin-bottom: 0.9375rem;
+                }
+                  }
+
+            // Media
+                @include min-md {
+                    flex-direction: column;
+                }
+                @include md {
+                    flex-direction: column;
+                }
+                }
+
+                .info {
+                    flex: 1;
+                    line-height: 1.7;
+                    display: block;
+                }
+            }
+
+            // Box 4 
+
+            .box.footer-gallery {
+                img {
+                    max-width: 100%;
+                    width: 78px;
+                    border: 3px solid white;
+                    margin: 2px;
+                }
+            }
+
+        }
+
+            // Media
+            @include min-md {
+                text-align: center;
+            }
+            @include md {
+                text-align: center;
+            }
+
+    }
+
+    .footer .copyright {
+        color: white;
+        padding: 25px 0;
+        text-align: center;
+        margin: 3.125rem 0 0;
+        border-top: 1px solid #444;
+
+         a {
+            font-weight: bold;
+            color: white;
+        }
+
+    }
+
+/*End of Footer*/
